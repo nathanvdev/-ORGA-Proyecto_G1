@@ -1,0 +1,561 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> start
+Rule 1     start -> NEW_PRINT ID PUNTOYCOMA instrucciones END_PRINT PUNTOYCOMA
+Rule 2     instrucciones -> instrucciones instruccion
+Rule 3     instrucciones -> instruccion
+Rule 4     instruccion -> SET_PRINT_X PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+Rule 5     instruccion -> SET_PRINT_Y PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+Rule 6     instruccion -> SET_PRINT_O PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+Rule 7     instruccion -> SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+Rule 8     instruccion -> SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+Rule 9     color -> CYAN
+Rule 10    color -> MAGENTA
+Rule 11    color -> AMARILLO
+Rule 12    color -> NEGRO
+
+Terminals, with rules where they appear
+
+AMARILLO             : 11
+COMA                 : 4 4 5 5 6 6 7 7 8 8
+CYAN                 : 9
+END_PRINT            : 1
+ID                   : 1
+MAGENTA              : 10
+NEGRO                : 12
+NEW_PRINT            : 1
+NUMBER               : 4 4 5 5 6 6 7 7 8 8
+PARA                 : 4 5 6 7 8
+PARC                 : 4 5 6 7 8
+PUNTOYCOMA           : 1 1 4 5 6 7 8
+SET_PRINT_ESTRELLA   : 8
+SET_PRINT_O          : 6
+SET_PRINT_TRIANGULO  : 7
+SET_PRINT_X          : 4
+SET_PRINT_Y          : 5
+error                : 
+
+Nonterminals, with rules where they appear
+
+color                : 4 5 6 7 8
+instruccion          : 2 3
+instrucciones        : 1 2
+start                : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . start
+    (1) start -> . NEW_PRINT ID PUNTOYCOMA instrucciones END_PRINT PUNTOYCOMA
+
+    NEW_PRINT       shift and go to state 2
+
+    start                          shift and go to state 1
+
+state 1
+
+    (0) S' -> start .
+
+
+
+state 2
+
+    (1) start -> NEW_PRINT . ID PUNTOYCOMA instrucciones END_PRINT PUNTOYCOMA
+
+    ID              shift and go to state 3
+
+
+state 3
+
+    (1) start -> NEW_PRINT ID . PUNTOYCOMA instrucciones END_PRINT PUNTOYCOMA
+
+    PUNTOYCOMA      shift and go to state 4
+
+
+state 4
+
+    (1) start -> NEW_PRINT ID PUNTOYCOMA . instrucciones END_PRINT PUNTOYCOMA
+    (2) instrucciones -> . instrucciones instruccion
+    (3) instrucciones -> . instruccion
+    (4) instruccion -> . SET_PRINT_X PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+    (5) instruccion -> . SET_PRINT_Y PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+    (6) instruccion -> . SET_PRINT_O PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+    (7) instruccion -> . SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+    (8) instruccion -> . SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    SET_PRINT_X     shift and go to state 7
+    SET_PRINT_Y     shift and go to state 8
+    SET_PRINT_O     shift and go to state 9
+    SET_PRINT_TRIANGULO shift and go to state 10
+    SET_PRINT_ESTRELLA shift and go to state 11
+
+    instrucciones                  shift and go to state 5
+    instruccion                    shift and go to state 6
+
+state 5
+
+    (1) start -> NEW_PRINT ID PUNTOYCOMA instrucciones . END_PRINT PUNTOYCOMA
+    (2) instrucciones -> instrucciones . instruccion
+    (4) instruccion -> . SET_PRINT_X PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+    (5) instruccion -> . SET_PRINT_Y PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+    (6) instruccion -> . SET_PRINT_O PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+    (7) instruccion -> . SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+    (8) instruccion -> . SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    END_PRINT       shift and go to state 12
+    SET_PRINT_X     shift and go to state 7
+    SET_PRINT_Y     shift and go to state 8
+    SET_PRINT_O     shift and go to state 9
+    SET_PRINT_TRIANGULO shift and go to state 10
+    SET_PRINT_ESTRELLA shift and go to state 11
+
+    instruccion                    shift and go to state 13
+
+state 6
+
+    (3) instrucciones -> instruccion .
+
+    END_PRINT       reduce using rule 3 (instrucciones -> instruccion .)
+    SET_PRINT_X     reduce using rule 3 (instrucciones -> instruccion .)
+    SET_PRINT_Y     reduce using rule 3 (instrucciones -> instruccion .)
+    SET_PRINT_O     reduce using rule 3 (instrucciones -> instruccion .)
+    SET_PRINT_TRIANGULO reduce using rule 3 (instrucciones -> instruccion .)
+    SET_PRINT_ESTRELLA reduce using rule 3 (instrucciones -> instruccion .)
+
+
+state 7
+
+    (4) instruccion -> SET_PRINT_X . PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    PARA            shift and go to state 14
+
+
+state 8
+
+    (5) instruccion -> SET_PRINT_Y . PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    PARA            shift and go to state 15
+
+
+state 9
+
+    (6) instruccion -> SET_PRINT_O . PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    PARA            shift and go to state 16
+
+
+state 10
+
+    (7) instruccion -> SET_PRINT_TRIANGULO . PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    PARA            shift and go to state 17
+
+
+state 11
+
+    (8) instruccion -> SET_PRINT_ESTRELLA . PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    PARA            shift and go to state 18
+
+
+state 12
+
+    (1) start -> NEW_PRINT ID PUNTOYCOMA instrucciones END_PRINT . PUNTOYCOMA
+
+    PUNTOYCOMA      shift and go to state 19
+
+
+state 13
+
+    (2) instrucciones -> instrucciones instruccion .
+
+    END_PRINT       reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    SET_PRINT_X     reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    SET_PRINT_Y     reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    SET_PRINT_O     reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    SET_PRINT_TRIANGULO reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+    SET_PRINT_ESTRELLA reduce using rule 2 (instrucciones -> instrucciones instruccion .)
+
+
+state 14
+
+    (4) instruccion -> SET_PRINT_X PARA . NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    NUMBER          shift and go to state 20
+
+
+state 15
+
+    (5) instruccion -> SET_PRINT_Y PARA . NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    NUMBER          shift and go to state 21
+
+
+state 16
+
+    (6) instruccion -> SET_PRINT_O PARA . NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    NUMBER          shift and go to state 22
+
+
+state 17
+
+    (7) instruccion -> SET_PRINT_TRIANGULO PARA . NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    NUMBER          shift and go to state 23
+
+
+state 18
+
+    (8) instruccion -> SET_PRINT_ESTRELLA PARA . NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    NUMBER          shift and go to state 24
+
+
+state 19
+
+    (1) start -> NEW_PRINT ID PUNTOYCOMA instrucciones END_PRINT PUNTOYCOMA .
+
+    $end            reduce using rule 1 (start -> NEW_PRINT ID PUNTOYCOMA instrucciones END_PRINT PUNTOYCOMA .)
+
+
+state 20
+
+    (4) instruccion -> SET_PRINT_X PARA NUMBER . COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    COMA            shift and go to state 25
+
+
+state 21
+
+    (5) instruccion -> SET_PRINT_Y PARA NUMBER . COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    COMA            shift and go to state 26
+
+
+state 22
+
+    (6) instruccion -> SET_PRINT_O PARA NUMBER . COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    COMA            shift and go to state 27
+
+
+state 23
+
+    (7) instruccion -> SET_PRINT_TRIANGULO PARA NUMBER . COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    COMA            shift and go to state 28
+
+
+state 24
+
+    (8) instruccion -> SET_PRINT_ESTRELLA PARA NUMBER . COMA NUMBER COMA color PARC PUNTOYCOMA
+
+    COMA            shift and go to state 29
+
+
+state 25
+
+    (4) instruccion -> SET_PRINT_X PARA NUMBER COMA . NUMBER COMA color PARC PUNTOYCOMA
+
+    NUMBER          shift and go to state 30
+
+
+state 26
+
+    (5) instruccion -> SET_PRINT_Y PARA NUMBER COMA . NUMBER COMA color PARC PUNTOYCOMA
+
+    NUMBER          shift and go to state 31
+
+
+state 27
+
+    (6) instruccion -> SET_PRINT_O PARA NUMBER COMA . NUMBER COMA color PARC PUNTOYCOMA
+
+    NUMBER          shift and go to state 32
+
+
+state 28
+
+    (7) instruccion -> SET_PRINT_TRIANGULO PARA NUMBER COMA . NUMBER COMA color PARC PUNTOYCOMA
+
+    NUMBER          shift and go to state 33
+
+
+state 29
+
+    (8) instruccion -> SET_PRINT_ESTRELLA PARA NUMBER COMA . NUMBER COMA color PARC PUNTOYCOMA
+
+    NUMBER          shift and go to state 34
+
+
+state 30
+
+    (4) instruccion -> SET_PRINT_X PARA NUMBER COMA NUMBER . COMA color PARC PUNTOYCOMA
+
+    COMA            shift and go to state 35
+
+
+state 31
+
+    (5) instruccion -> SET_PRINT_Y PARA NUMBER COMA NUMBER . COMA color PARC PUNTOYCOMA
+
+    COMA            shift and go to state 36
+
+
+state 32
+
+    (6) instruccion -> SET_PRINT_O PARA NUMBER COMA NUMBER . COMA color PARC PUNTOYCOMA
+
+    COMA            shift and go to state 37
+
+
+state 33
+
+    (7) instruccion -> SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER . COMA color PARC PUNTOYCOMA
+
+    COMA            shift and go to state 38
+
+
+state 34
+
+    (8) instruccion -> SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER . COMA color PARC PUNTOYCOMA
+
+    COMA            shift and go to state 39
+
+
+state 35
+
+    (4) instruccion -> SET_PRINT_X PARA NUMBER COMA NUMBER COMA . color PARC PUNTOYCOMA
+    (9) color -> . CYAN
+    (10) color -> . MAGENTA
+    (11) color -> . AMARILLO
+    (12) color -> . NEGRO
+
+    CYAN            shift and go to state 41
+    MAGENTA         shift and go to state 42
+    AMARILLO        shift and go to state 43
+    NEGRO           shift and go to state 44
+
+    color                          shift and go to state 40
+
+state 36
+
+    (5) instruccion -> SET_PRINT_Y PARA NUMBER COMA NUMBER COMA . color PARC PUNTOYCOMA
+    (9) color -> . CYAN
+    (10) color -> . MAGENTA
+    (11) color -> . AMARILLO
+    (12) color -> . NEGRO
+
+    CYAN            shift and go to state 41
+    MAGENTA         shift and go to state 42
+    AMARILLO        shift and go to state 43
+    NEGRO           shift and go to state 44
+
+    color                          shift and go to state 45
+
+state 37
+
+    (6) instruccion -> SET_PRINT_O PARA NUMBER COMA NUMBER COMA . color PARC PUNTOYCOMA
+    (9) color -> . CYAN
+    (10) color -> . MAGENTA
+    (11) color -> . AMARILLO
+    (12) color -> . NEGRO
+
+    CYAN            shift and go to state 41
+    MAGENTA         shift and go to state 42
+    AMARILLO        shift and go to state 43
+    NEGRO           shift and go to state 44
+
+    color                          shift and go to state 46
+
+state 38
+
+    (7) instruccion -> SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER COMA . color PARC PUNTOYCOMA
+    (9) color -> . CYAN
+    (10) color -> . MAGENTA
+    (11) color -> . AMARILLO
+    (12) color -> . NEGRO
+
+    CYAN            shift and go to state 41
+    MAGENTA         shift and go to state 42
+    AMARILLO        shift and go to state 43
+    NEGRO           shift and go to state 44
+
+    color                          shift and go to state 47
+
+state 39
+
+    (8) instruccion -> SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER COMA . color PARC PUNTOYCOMA
+    (9) color -> . CYAN
+    (10) color -> . MAGENTA
+    (11) color -> . AMARILLO
+    (12) color -> . NEGRO
+
+    CYAN            shift and go to state 41
+    MAGENTA         shift and go to state 42
+    AMARILLO        shift and go to state 43
+    NEGRO           shift and go to state 44
+
+    color                          shift and go to state 48
+
+state 40
+
+    (4) instruccion -> SET_PRINT_X PARA NUMBER COMA NUMBER COMA color . PARC PUNTOYCOMA
+
+    PARC            shift and go to state 49
+
+
+state 41
+
+    (9) color -> CYAN .
+
+    PARC            reduce using rule 9 (color -> CYAN .)
+
+
+state 42
+
+    (10) color -> MAGENTA .
+
+    PARC            reduce using rule 10 (color -> MAGENTA .)
+
+
+state 43
+
+    (11) color -> AMARILLO .
+
+    PARC            reduce using rule 11 (color -> AMARILLO .)
+
+
+state 44
+
+    (12) color -> NEGRO .
+
+    PARC            reduce using rule 12 (color -> NEGRO .)
+
+
+state 45
+
+    (5) instruccion -> SET_PRINT_Y PARA NUMBER COMA NUMBER COMA color . PARC PUNTOYCOMA
+
+    PARC            shift and go to state 50
+
+
+state 46
+
+    (6) instruccion -> SET_PRINT_O PARA NUMBER COMA NUMBER COMA color . PARC PUNTOYCOMA
+
+    PARC            shift and go to state 51
+
+
+state 47
+
+    (7) instruccion -> SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER COMA color . PARC PUNTOYCOMA
+
+    PARC            shift and go to state 52
+
+
+state 48
+
+    (8) instruccion -> SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER COMA color . PARC PUNTOYCOMA
+
+    PARC            shift and go to state 53
+
+
+state 49
+
+    (4) instruccion -> SET_PRINT_X PARA NUMBER COMA NUMBER COMA color PARC . PUNTOYCOMA
+
+    PUNTOYCOMA      shift and go to state 54
+
+
+state 50
+
+    (5) instruccion -> SET_PRINT_Y PARA NUMBER COMA NUMBER COMA color PARC . PUNTOYCOMA
+
+    PUNTOYCOMA      shift and go to state 55
+
+
+state 51
+
+    (6) instruccion -> SET_PRINT_O PARA NUMBER COMA NUMBER COMA color PARC . PUNTOYCOMA
+
+    PUNTOYCOMA      shift and go to state 56
+
+
+state 52
+
+    (7) instruccion -> SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER COMA color PARC . PUNTOYCOMA
+
+    PUNTOYCOMA      shift and go to state 57
+
+
+state 53
+
+    (8) instruccion -> SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER COMA color PARC . PUNTOYCOMA
+
+    PUNTOYCOMA      shift and go to state 58
+
+
+state 54
+
+    (4) instruccion -> SET_PRINT_X PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .
+
+    END_PRINT       reduce using rule 4 (instruccion -> SET_PRINT_X PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_X     reduce using rule 4 (instruccion -> SET_PRINT_X PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_Y     reduce using rule 4 (instruccion -> SET_PRINT_X PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_O     reduce using rule 4 (instruccion -> SET_PRINT_X PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_TRIANGULO reduce using rule 4 (instruccion -> SET_PRINT_X PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_ESTRELLA reduce using rule 4 (instruccion -> SET_PRINT_X PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+
+
+state 55
+
+    (5) instruccion -> SET_PRINT_Y PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .
+
+    END_PRINT       reduce using rule 5 (instruccion -> SET_PRINT_Y PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_X     reduce using rule 5 (instruccion -> SET_PRINT_Y PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_Y     reduce using rule 5 (instruccion -> SET_PRINT_Y PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_O     reduce using rule 5 (instruccion -> SET_PRINT_Y PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_TRIANGULO reduce using rule 5 (instruccion -> SET_PRINT_Y PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_ESTRELLA reduce using rule 5 (instruccion -> SET_PRINT_Y PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+
+
+state 56
+
+    (6) instruccion -> SET_PRINT_O PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .
+
+    END_PRINT       reduce using rule 6 (instruccion -> SET_PRINT_O PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_X     reduce using rule 6 (instruccion -> SET_PRINT_O PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_Y     reduce using rule 6 (instruccion -> SET_PRINT_O PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_O     reduce using rule 6 (instruccion -> SET_PRINT_O PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_TRIANGULO reduce using rule 6 (instruccion -> SET_PRINT_O PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_ESTRELLA reduce using rule 6 (instruccion -> SET_PRINT_O PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+
+
+state 57
+
+    (7) instruccion -> SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .
+
+    END_PRINT       reduce using rule 7 (instruccion -> SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_X     reduce using rule 7 (instruccion -> SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_Y     reduce using rule 7 (instruccion -> SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_O     reduce using rule 7 (instruccion -> SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_TRIANGULO reduce using rule 7 (instruccion -> SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_ESTRELLA reduce using rule 7 (instruccion -> SET_PRINT_TRIANGULO PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+
+
+state 58
+
+    (8) instruccion -> SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .
+
+    END_PRINT       reduce using rule 8 (instruccion -> SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_X     reduce using rule 8 (instruccion -> SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_Y     reduce using rule 8 (instruccion -> SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_O     reduce using rule 8 (instruccion -> SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_TRIANGULO reduce using rule 8 (instruccion -> SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+    SET_PRINT_ESTRELLA reduce using rule 8 (instruccion -> SET_PRINT_ESTRELLA PARA NUMBER COMA NUMBER COMA color PARC PUNTOYCOMA .)
+
