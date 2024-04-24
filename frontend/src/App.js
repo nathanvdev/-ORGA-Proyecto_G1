@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 const styles = {
   cyan: {
     backgroundColor: "#00FFFF",
@@ -50,6 +51,8 @@ function App() {
     setSelectedColor(color);
   };
 
+  
+
   const handleShapeSelection = (shape) => {
     setSelectedShape(shape);
   };
@@ -82,6 +85,10 @@ function App() {
       element.click();
     }
   };
+
+  function handleClick(){
+     window.open("../Documentacion/Documentación_Proyecto_ORGA_G1.pdf","_blank");
+}
 
   const handleSubmit = () => {
     fetch("http://localhost:5000/sendData", {
@@ -161,7 +168,7 @@ function App() {
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="#" onClick={toggleFileMenu}>
                       Salir
                     </a>
                   </li>
@@ -171,15 +178,17 @@ function App() {
 
             {/* Help Button */}
             <button
-              className="btn btn-secondary"
-              style={{ marginLeft: "10px" }}
-            >
-              Ayuda
-            </button>
+  className="btn btn-secondary"
+  style={{ marginLeft: "10px" }}
+  onClick={() => {
+    window.open("https://drive.google.com/uc?export=download&id=1PKttHF4-sbIuw-d-Do8591ccP810_6J1", "_blank");
+  }}
+>
+  Ayuda
+</button>
           </div>
         </div>
       </div>
-
       <div className="row mt-3">
         <div className="col">
           <textarea
