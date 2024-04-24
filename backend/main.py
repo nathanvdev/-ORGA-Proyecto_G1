@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from serial import Serial
+#from serial import Serial
 from interprete.parser import grammar
 
 
@@ -46,6 +46,8 @@ def sendData():
     
 
 
+if __name__ == '__main__':
+    app.run(port=5000)
 
 if __name__ == "__main__":
     app.run(debug=True)
