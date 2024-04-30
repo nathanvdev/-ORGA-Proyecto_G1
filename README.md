@@ -2,7 +2,7 @@
 
 ## Proyecto - Plotter Serial
 
-### PRIMER SEMESTRE 2024
+### RAMA DEVELOP
 
 |     | Nombre                            | Carnet    |
 | --- | --------------------------------- | --------- |
