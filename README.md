@@ -1,8 +1,8 @@
-# LAB. ORGANIZACION COMPUTACIONAL GRUPO #1
+# RAMA DEVELOP 👀
 
-## Proyecto - Plotter Serial
+## Proyecto - Plotter Serial 
 
-### RAMA DEVELOP
+### PRIMER SEMESTRE 2024
 
 |     | Nombre                            | Carnet    |
 | --- | --------------------------------- | --------- |
