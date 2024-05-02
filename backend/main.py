@@ -1,10 +1,16 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+import serial 
+import sys
+import os
+import time
 #from serial import Serial
 from interprete.parser import grammar
 
 
-# serialArduino = Serial("COM3",9600)
+arduino =serial.Serial('COM10',baudrate=9600,timeout=.1)
+arduino_leido= arduino.readline()
+#time.sleep(2)
 
 app = Flask(__name__)
 CORS(app)
@@ -28,11 +34,25 @@ def sendData():
         print("\nformato de instrucciones:  Figura;Fila;Columna;Color")
         for instruction in ast:
             tmp = instruction.execute()
-            print("codigo enviado: "+ str(tmp.encode('ascii')))
-
-            # serialArduino.write(tmp.encode('ascii'))
-            # print("codigo en consola serial de arduino: " + serialArduino.readline())
-
+            print("codigo enviado: "+ str(tmp.encode('utf-8')))
+            cadena=tmp+"\n"
+            bytes_cadena=cadena.encode('utf-8')
+            arduino.write(bytes_cadena)
+            
+            print("---------------------")
+            #print("codigo recibido arduino: "+ str(arduino_leido))
+            arduino_leido=arduino.readline()
+            print(arduino_leido)
+            arduino_leido=arduino.readline()
+            print(arduino_leido)
+            arduino_leido=arduino.readline()
+            print(arduino_leido)
+            arduino_leido=arduino.readline()
+            print(arduino_leido)
+            arduino_leido=arduino.readline()
+            print(arduino_leido)
+           
+            print("**")
 
     except Exception as e:
         print(f"Ocurrió un error: {str(e)}")
