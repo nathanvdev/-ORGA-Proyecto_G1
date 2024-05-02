@@ -25,12 +25,9 @@
 
 
 
-## Notas para la ejecución (Modificar despues xd)
-- 0.Instalar el driver.
-- 1.Abrir el driver del simulador serial.
-- 2.Emparejarlos en el com3 y com4, se agrega el par de puertos 
-- 3.En arduino instalar la libreria del separador.
-- 4.En proteus dar el hex al arduino.
-- 5.Poner en com 3 el puerto serial.
-- 6.Comenzar el programa en Python y luego el proyecto en proteus.
+## Comunicación Serial
+
+El puerto serial es una interfaz de comunicación que permite la transferencia de datos de manera serial, es decir, un bit a la vez, entre dos dispositivos. En el caso de Arduino, el puerto serial se utiliza para la comunicación entre la placa Arduino y otros dispositivos, como una computadora.
+
+En este proyecto se utilizó la comunicación serial con 9600 baudios, el backend envia y recibe información del arduino gracias a esto, desde el backed se envía la información como figura, color,posicion en X, posicion en Y de cada coordenada como una cadena de texto, esta es recibida por el arduino, decodificada y procesada para su escritura en la ram, luego su lectura y ejecución, luego de completar este ciclo el arduino envia una señal utilizando la comunicación serial al computador para indicar que está listo para reicibir una nueva coordena y repetir este ciclo. 
 
