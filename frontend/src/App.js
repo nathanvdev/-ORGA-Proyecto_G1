@@ -181,7 +181,7 @@ function App() {
   className="btn btn-secondary"
   style={{ marginLeft: "10px" }}
   onClick={() => {
-    window.open("https://drive.google.com/uc?export=download&id=1PKttHF4-sbIuw-d-Do8591ccP810_6J1", "_blank");
+    window.open("https://drive.google.com/file/d/1JFSPSpb9RnO8lPRZADIsKTetoJAtsn_U/view?usp=drive_link", "_blank");
   }}
 >
   Ayuda
